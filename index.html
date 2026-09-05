@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mauro Coleta em Tambores - Descarte Consciente</title>
+    <meta name="description" content="Coleta e reciclagem de tambores em Volta Redonda. Descarte consciente, futuro sustentável.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0F6E56 0%, #1D9E75 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .cta-header {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #0F6E56;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f0f9f7 0%, #e6f5f1 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            color: #0F6E56;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            color: #1D9E75;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .btn-large {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            background: #1D9E75;
+            color: white;
+            border-radius: 8px;
+        }
+
+        .btn-large:hover {
+            background: #0F6E56;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(15, 110, 86, 0.3);
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #0F6E56;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .service-card {
+            background: white;
+            border: 2px solid #e0f2f1;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: #1D9E75;
+            box-shadow: 0 8px 24px rgba(15, 110, 86, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: #e6f5f1;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            color: #1D9E75;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        #sobre {
+            background: #f9f9f9;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: #0F6E56;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+
+        .feature-check {
+            width: 24px;
+            height: 24px;
+            background: #1D9E75;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .feature-text {
+            color: #333;
+        }
+
+        .about-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+            background: linear-gradient(135deg, #0F6E56 0%, #1D9E75 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        #faq {
+            background: white;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .faq-item {
+            background: #f9f9f9;
+            border-radius: 12px;
+            padding: 25px;
+            border-left: 4px solid #1D9E75;
+        }
+
+        .faq-item strong {
+            color: #0F6E56;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        .faq-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        #cta {
+            background: linear-gradient(135deg, #0F6E56 0%, #1D9E75 100%);
+            color: white;
+            text-align: center;
+        }
+
+        #cta h2 {
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        #cta p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+            margin: 20px 0 40px 0;
+        }
+
+        footer {
+            background: #0F6E56;
+            color: white;
+            padding: 40px 0 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .benefit-box {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .benefit-box h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .benefit-box p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .cta-header .btn {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+
+            .hero {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">🔄</div>
+                    <span>Mauro Coleta</span>
+                </div>
+                <div class="cta-header">
+                    <a href="https://wa.me/5524981100436?text=Olá! Vi o site da Mauro Coleta em Tambores e gostaria de saber mais." class="btn btn-primary" target="_blank">
+                        <span>💬</span> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Descarte Consciente<br>Futuro Sustentável</h1>
+                <p>Coleta profissional de tambores e resíduos</p>
+                <div class="subtitle">Atendemos Volta Redonda e região com segurança, responsabilidade ambiental e conformidade com normas</div>
+                <a href="https://wa.me/5524981100436?text=Olá! Preciso de orçamento para coleta de tambores." class="btn btn-large" target="_blank">
+                    Solicitar Orçamento
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <div class="container">
+            <h2>Nossos Serviços</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🛢️</div>
+                    <h3>Coleta de Tambores</h3>
+                    <p>Recolhimento seguro e profissional de tambores vazios com certificação ambiental</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">♻️</div>
+                    <h3>Descarte Ambientalmente Correto</h3>
+                    <p>Processamento em conformidade com normas ambientais brasileiras</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✅</div>
+                    <h3>Conformidade com Normas</h3>
+                    <p>Documentação completa e conformidade com requisitos regulatórios</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>Tambor 200L</h3>
+                    <p>Coleta de tambores de 200 litros para sua empresa e o meio ambiente</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Atendimento Empresarial</h3>
+                    <p>Soluções customizadas para indústrias, distribuidoras e grandes geradores</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚚</div>
+                    <h3>Coleta no Local</h3>
+                    <p>Deslocamento até sua localização em Volta Redonda e região</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="container">
+            <h2>Por que escolher a Mauro?</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Coleta Profissional e Responsável</h3>
+                    <p>A Mauro Coleta em Tambores é especializada em recolhimento seguro e certificado de tambores e resíduos industriais.</p>
+                    <p>Nosso compromisso é oferecer um serviço completo, responsável e ambientalmente correto, priorizando:</p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div>
+                            <div class="feature-text"><strong>Coleta Segura:</strong> Procedimentos certificados</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div>
+                            <div class="feature-text"><strong>Descarte Correto:</strong> Conformidade ambiental</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div>
+                            <div class="feature-text"><strong>Conformidade Legal:</strong> Normas brasileiras</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-check">✓</div>
+                            <div class="feature-text"><strong>Atendimento Rápido:</strong> Volta Redonda e região</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        🌱
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="container">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <strong>Vocês recolhem apenas tambores?</strong>
+                    <p>Não. Coletamos tambores, além de outros resíduos industriais em conformidade com as normas.</p>
+                </div>
+                <div class="faq-item">
+                    <strong>Qual é a região de atendimento?</strong>
+                    <p>Atendemos Volta Redonda - RJ e região. Entre em contato para confirmar sua localização.</p>
+                </div>
+                <div class="faq-item">
+                    <strong>Como funciona o orçamento?</strong>
+                    <p>Entre em contato pelo WhatsApp, descreva a quantidade e tipo de resíduo, e receba um orçamento sem compromisso.</p>
+                </div>
+                <div class="faq-item">
+                    <strong>Preciso pagar antecipado?</strong>
+                    <p>Não. Você paga somente após a coleta realizada e confirmada.</p>
+                </div>
+                <div class="faq-item">
+                    <strong>Vocês fornecem documentação?</strong>
+                    <p>Sim. Fornecemos toda a documentação necessária para conformidade ambiental e regulatória.</p>
+                </div>
+                <div class="faq-item">
+                    <strong>Como agendar uma coleta?</strong>
+                    <p>Acione-nos pelo WhatsApp com a data, local e quantidade de tambores. Confirmamos o agendamento rapidamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta">
+        <div class="container">
+            <h2>Pronto para descartar de forma responsável?</h2>
+            <p>Entre em contato pelo WhatsApp e receba um orçamento personalizado</p>
+            <a href="https://wa.me/5524981100436?text=Olá! Preciso de orçamento para coleta de tambores na Mauro Coleta." class="btn btn-large" style="background: white; color: #0F6E56; margin: 0 auto; display: inline-flex;" target="_blank">
+                💬 Enviar mensagem no WhatsApp
+            </a>
+            <div class="benefits">
+                <div class="benefit-box">
+                    <h4>📱 Atendimento Rápido</h4>
+                    <p>Resposta em até 2 horas</p>
+                </div>
+                <div class="benefit-box">
+                    <h4>💰 Sem Taxa Adicional</h4>
+                    <p>Apenas a coleta, sem surpresas</p>
+                </div>
+                <div class="benefit-box">
+                    <h4>📋 Documentação Completa</h4>
+                    <p>Tudo regularizado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <div class="contact-info">
+                        <span>📱</span>
+                        <a href="https://wa.me/5524981100436" target="_blank">(24) 98110-0436</a>
+                    </div>
+                    <div class="contact-info">
+                        <span>📧</span>
+                        <a href="mailto:maurocaldeira10@gmail.com">maurocaldeira10@gmail.com</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Serviços</h4>
+                    <p>Coleta de Tambores</p>
+                    <p>Descarte Ambiental</p>
+                    <p>Conformidade Legal</p>
+                    <p>Atendimento Empresarial</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Localização</h4>
+                    <p>Volta Redonda - RJ</p>
+                    <p>Região: Volta Redonda e entorno</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mauro Coleta em Tambores. Descarte consciente, futuro sustentável.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
